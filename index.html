@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лиды для любого бизнеса на автопилоте</title>
+  <title>Сайт + Яндекс.Директ + Telegram за 24ч | Техническая связка под ключ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,12 +13,11 @@
             cyberBlack: "#07070b",
             neonPink: "#ff2bd6",
             neonBlue: "#46e3ff",
-            neonViolet: "#a257ff"
+            cyberGray: "#1a1a2e"
           },
           boxShadow: {
-            neon: "0 0 10px rgba(255,43,214,.7),0 0 20px rgba(70,227,255,.45)",
-            neonStrong: "0 0 12px rgba(255,43,214,.9),0 0 32px rgba(70,227,255,.75)",
-            card: "0 0 0 1px rgba(162,87,255,.45),0 0 20px rgba(255,43,214,.18)"
+            neon: "0 0 15px rgba(70,227,255,0.4)",
+            neonStrong: "0 0 25px rgba(255,43,214,0.6)"
           }
         }
       }
@@ -26,350 +25,295 @@
   </script>
   <style>
     body {
-      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 10% 20%, #12122a 0%, #07070b 40%, #05050a 100%);
+      font-family: "Inter", system-ui, sans-serif;
+      background: #07070b;
       color: #fff;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
-    .neon-text {
-      text-shadow: 0 0 8px rgba(255, 43, 214, 0.7), 0 0 18px rgba(70, 227, 255, 0.5);
+    .neon-border {
+      border: 1px solid rgba(70,227,255,0.3);
+      box-shadow: 0 0 15px rgba(70,227,255,0.1);
     }
-    .section-line {
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255,43,214,0), rgba(255,43,214,.8), rgba(70,227,255,.8), rgba(255,43,214,0));
-    }
-    .neon-btn {
-      position: relative;
-      overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .neon-btn::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      border: 1px solid rgba(70,227,255,.7);
-      pointer-events: none;
-    }
-    .neon-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 14px rgba(255,43,214,.9), 0 0 34px rgba(70,227,255,.75);
-      animation: pulseGlow 1.3s infinite alternate;
-    }
-    @keyframes pulseGlow {
-      from { filter: brightness(1); }
-      to { filter: brightness(1.2); }
-    }
-    .card-glow {
-      background: linear-gradient(145deg, rgba(17,17,27,.85), rgba(10,10,19,.95));
-      border: 1px solid rgba(162,87,255,.5);
-      box-shadow: 0 0 0 1px rgba(255,43,214,.25), 0 0 24px rgba(70,227,255,.15);
-    }
-    .laser-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(255,43,214,.17) 0%, rgba(255,43,214,0) 36%),
-        linear-gradient(45deg, rgba(70,227,255,.16) 0%, rgba(70,227,255,0) 42%);
-      pointer-events: none;
+    .neon-text-blue {
+      text-shadow: 0 0 10px rgba(70, 227, 255, 0.5);
     }
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
     }
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
-    @keyframes neonDrift {
-      0% { transform: scale(1.04) translate3d(0, 0, 0); }
-      50% { transform: scale(1.09) translate3d(-1.5%, 1.2%, 0); }
-      100% { transform: scale(1.05) translate3d(1.5%, -1%, 0); }
-    }
-    .problem-bg-track {
-      will-change: transform;
-      animation: neonDrift 14s ease-in-out infinite alternate;
-    }
-    @keyframes laserFlash {
-      0%, 72%, 100% { opacity: 0.08; filter: brightness(1); }
-      78% { opacity: 0.24; filter: brightness(1.2); }
-      84% { opacity: 0.16; filter: brightness(1.08); }
-      90% { opacity: 0.22; filter: brightness(1.16); }
-    }
-    .problem-laser-overlay {
-      pointer-events: none;
-      mix-blend-mode: screen;
-      background:
-        radial-gradient(60% 55% at 20% 35%, rgba(255,43,214,0.42), rgba(255,43,214,0)),
-        radial-gradient(62% 52% at 78% 58%, rgba(70,227,255,0.4), rgba(70,227,255,0)),
-        linear-gradient(112deg, rgba(255,43,214,0) 0%, rgba(255,43,214,0.2) 50%, rgba(255,43,214,0) 100%);
-      animation: laserFlash 8.8s ease-in-out infinite;
-    }
-    .problem-photo-grade {
-      pointer-events: none;
-      background:
-        radial-gradient(130% 90% at 18% 18%, rgba(255,43,214,0.24), rgba(255,43,214,0) 58%),
-        radial-gradient(120% 85% at 84% 74%, rgba(70,227,255,0.22), rgba(70,227,255,0) 60%),
-        linear-gradient(180deg, rgba(7,7,11,0.22) 0%, rgba(7,7,11,0.58) 100%);
-    }
-    .problem-photo-vignette {
-      pointer-events: none;
-      background:
-        radial-gradient(120% 90% at 50% 50%, rgba(7,7,11,0) 48%, rgba(7,7,11,0.46) 100%);
-    }
-    .problem-section .problem-laser-overlay {
-      opacity: 0.95;
-      transition: opacity .25s ease, filter .25s ease;
-    }
-    .problem-section .problem-bg-track img {
-      transition: opacity .25s ease, filter .25s ease;
-    }
-    .problem-section.is-bright .problem-laser-overlay {
-      opacity: 1;
-      filter: brightness(1.2);
-    }
-    .problem-section.is-bright .problem-bg-track img {
-      opacity: 0.63;
-      filter: saturate(1.15);
-    }
-    /* Reserved for optional 3-image background layout */
-    .problem-bg-tile {
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-    }
-    .problem-bg-tile img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .right-flip-bottom {
-      transform: scaleY(-1);
-      transform-origin: center;
-      object-position: center;
+    .gradient-bg {
+      background: linear-gradient(135deg, #07070b 0%, #1a1a2e 100%);
     }
   </style>
 </head>
 <body class="antialiased">
-  <div class="fixed inset-0 -z-10 pointer-events-none opacity-20">
-    <div class="absolute top-0 left-0 w-72 h-72 rounded-full blur-3xl bg-neonPink"></div>
-    <div class="absolute top-1/3 right-0 w-96 h-96 rounded-full blur-3xl bg-neonBlue"></div>
-    <div class="absolute bottom-0 left-1/3 w-96 h-96 rounded-full blur-3xl bg-neonViolet"></div>
-  </div>
 
-  <header class="relative laser-bg min-h-[92vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="./assets/neon-2.png" alt="Фоновая неоновая графика" class="w-full h-full object-cover object-right opacity-25">
-      <div class="absolute inset-0 bg-gradient-to-r from-cyberBlack via-cyberBlack/80 to-cyberBlack/35"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-cyberBlack via-transparent to-cyberBlack/30"></div>
+  <!-- 1. ГЛАВНЫЙ ЭКРАН -->
+  <header class="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-neonBlue rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neonPink rounded-full blur-[120px]"></div>
     </div>
-    <div class="max-w-6xl mx-auto px-4 md:px-5 py-14 md:py-16 lg:py-20 max-[390px]:py-10 grid lg:grid-cols-2 gap-8 lg:gap-10 max-[390px]:gap-6 items-center">
-      <div class="reveal relative z-10">
-        <p class="uppercase tracking-[0.22em] max-[390px]:tracking-[0.16em] text-neonBlue text-sm md:text-base max-[390px]:text-[11px] mb-5 max-[390px]:mb-3">Cyber AI Marketing System</p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-[390px]:text-[30px] font-black leading-[1.05] mb-5 max-[390px]:mb-3 neon-text text-left">
-          Лиды для любого бизнеса на автопилоте
-        </h1>
-        <p class="max-w-3xl text-lg md:text-xl lg:text-2xl max-[390px]:text-base font-semibold mb-4 max-[390px]:mb-3 leading-snug">
-          Получайте от <span class="text-neonPink font-black">15 горячих заявок ежедневно</span> с помощью ИИ-конвейера и автообзвона с <span class="text-neonBlue font-black">окупаемостью х5</span> уже в первый месяц
-        </p>
-        <p class="max-w-2xl text-zinc-300 text-base md:text-lg max-[390px]:text-sm leading-relaxed mb-7 max-[390px]:mb-5">
-          Связка «Лендинг + Яндекс.Директ + ИИ-менеджер» заменяет отдел продаж из 5 человек. Пока Вы спите, нейросеть квалифицирует лиды и записывает их на сделку.
-        </p>
-        <a href="#final-cta" class="neon-btn inline-flex w-full sm:w-auto justify-center text-center rounded-xl bg-gradient-to-r from-neonPink to-neonBlue px-6 md:px-8 max-[390px]:px-4 py-3.5 max-[390px]:py-3 text-xs sm:text-sm md:text-base max-[390px]:text-[11px] leading-tight font-black tracking-wide max-[390px]:tracking-normal uppercase shadow-neon">
-          ЗАПУСТИТЬ АВТОПИЛОТ ПРОДАЖ
+    
+    <div class="max-w-5xl mx-auto px-5 text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
+        Увеличьте <span class="text-neonBlue neon-text-blue">чистую прибыль на 35%</span> за счет связки «Сайт + Яндекс.Директ + Telegram» <span class="text-neonPink">всего за 24 часа</span>
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Забудьте о ручном поиске клиентов. Получайте уведомления о новых заявках прямо в Telegram, пока Яндекс.Директ приводит горячий трафик на Ваш новый конверсионный лендинг.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#form" class="w-full sm:w-auto px-10 py-5 bg-neonBlue text-cyberBlack font-black rounded-xl hover:scale-105 transition-transform shadow-neon uppercase tracking-wider">
+          Запустить систему за 24ч
         </a>
-      </div>
-
-      <div class="reveal relative z-10">
-        <div class="grid grid-cols-1 gap-4 lg:pl-8">
-          <div class="card-glow rounded-2xl p-5 text-center">
-            <p class="uppercase tracking-[0.2em] text-neonBlue/90 text-xs mb-2">Скорость</p>
-            <p class="text-4xl md:text-5xl font-black text-neonBlue neon-text">15 сек</p>
-          </div>
-          <div class="card-glow rounded-2xl p-5 text-center">
-            <p class="uppercase tracking-[0.2em] text-neonPink/90 text-xs mb-2">Окупаемость</p>
-            <p class="text-4xl md:text-5xl font-black text-neonPink neon-text">x5</p>
-          </div>
-          <div class="card-glow rounded-2xl p-5 text-center">
-            <p class="uppercase tracking-[0.2em] text-neonBlue/90 text-xs mb-2">Запуск</p>
-            <p class="text-4xl md:text-5xl font-black text-neonBlue neon-text">24 часа</p>
-          </div>
-        </div>
+        <p class="text-xs text-zinc-500 max-w-[200px] text-left">Установка и настройка под ключ.</p>
       </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 md:px-5 pb-16 md:pb-20">
-    <div class="section-line my-10 md:my-12"></div>
-
-    <section id="problem-section" class="problem-section is-bright reveal relative overflow-hidden rounded-3xl p-4 md:p-6">
-      <div class="absolute inset-0 z-0">
-        <div class="h-full problem-bg-track">
-          <img src="./assets/neon-3.png" alt="Неоновый фон" class="h-full w-full object-cover opacity-55">
+  <!-- 2. БЛОК С БОЛЯМИ -->
+  <section class="py-24 bg-cyberBlack">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl md:text-5xl font-black mb-16 text-center">Устали от этих проблем в бизнесе?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal p-8 rounded-2xl bg-cyberGray border border-white/5 hover:border-neonPink/50 transition-colors">
+          <div class="text-neonPink text-4xl mb-6">✕</div>
+          <h4 class="text-xl font-bold mb-4">Сарафанка затихла</h4>
+          <p class="text-zinc-500">Клиенты приходят нестабильно, а Вы не можете планировать свои доходы на месяц вперед.</p>
         </div>
-        <div class="absolute inset-0 problem-photo-grade"></div>
-        <div class="absolute inset-0 problem-photo-vignette"></div>
-        <div class="absolute inset-0 problem-laser-overlay"></div>
-        <div class="absolute inset-0 bg-cyberBlack/65"></div>
-      </div>
-      <div class="relative z-10 mb-6">
-        <h2 class="text-2xl md:text-4xl font-extrabold neon-text max-w-3xl mx-auto text-center">
-          Почему Ваш маркетинг до сих пор не приносит миллионов?
-        </h2>
-      </div>
-      <div class="relative z-10">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <article class="card-glow rounded-2xl p-5">
-            <h3 class="font-extrabold text-neonPink mb-3 text-lg">Слив бюджета</h3>
-            <p class="text-zinc-100 text-base leading-relaxed">Тратите на клики, но менеджеры перезванивают через 3 часа, когда клиент уже остыл.</p>
-          </article>
-          <article class="card-glow rounded-2xl p-5">
-            <h3 class="font-extrabold text-neonBlue mb-3 text-lg">Человеческий фактор</h3>
-            <p class="text-zinc-100 text-base leading-relaxed">Операторы устают, хамят или забывают прозвонить базу.</p>
-          </article>
-          <article class="card-glow rounded-2xl p-5">
-            <h3 class="font-extrabold text-neonPink mb-3 text-lg">Сложный запуск</h3>
-            <p class="text-zinc-100 text-base leading-relaxed">Месяцы разработки сайта и недели настроек рекламы съедают Вашу прибыль.</p>
-          </article>
-          <article class="card-glow rounded-2xl p-5">
-            <h3 class="font-extrabold text-neonBlue mb-3 text-lg">«Мертвые» лиды</h3>
-            <p class="text-zinc-100 text-base leading-relaxed">Заявки приходят, но никто не доходит до оплаты.</p>
-          </article>
+        <div class="reveal p-8 rounded-2xl bg-cyberGray border border-white/5 hover:border-neonPink/50 transition-colors">
+          <div class="text-neonPink text-4xl mb-6">✕</div>
+          <h4 class="text-xl font-bold mb-4">Слив бюджета</h4>
+          <p class="text-zinc-500">Запускали рекламу сами или с фрилансерами, но получили только клики без единой продажи.</p>
+        </div>
+        <div class="reveal p-8 rounded-2xl bg-cyberGray border border-white/5 hover:border-neonPink/50 transition-colors">
+          <div class="text-neonPink text-4xl mb-6">✕</div>
+          <h4 class="text-xl font-bold mb-4">Хаос в заявках</h4>
+          <p class="text-zinc-500">Забываете перезвонить клиенту, теряете контакты в почте или записных книжках.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-line my-10 md:my-12"></div>
-
-    <section class="reveal">
-      <h2 class="text-2xl md:text-4xl font-extrabold mb-6 neon-text text-center">Технологии, которые работают на Вас 24/7</h2>
-      <div class="grid md:grid-cols-2 gap-5">
-        <article class="card-glow rounded-2xl p-5">
-          <h3 class="font-bold text-neonBlue mb-3">Умный автообзвон</h3>
-          <p class="text-zinc-300">ИИ звонит по базе через 30 секунд после заявки. Голос не отличить от человеческого, конверсия в назначение встречи — до <span class="font-black text-neonPink">40%</span>.</p>
-        </article>
-        <article class="card-glow rounded-2xl p-5">
-          <h3 class="font-bold text-neonPink mb-3">ИИ-менеджер в чате</h3>
-          <p class="text-zinc-300">Нейросеть отвечает на вопросы, отрабатывает возражения и закрывает сделки в Telegram/WhatsApp без перерывов и выходных.</p>
-        </article>
-        <article class="card-glow rounded-2xl p-5">
-          <h3 class="font-bold text-neonBlue mb-3">Реактивный старт</h3>
-          <p class="text-zinc-300">Сайт, реклама в Яндекс (оплата за клик) и интеграция с ИИ под ключ всего за <span class="font-black text-neonPink">24 часа</span>.</p>
-        </article>
-        <article class="card-glow rounded-2xl p-5">
-          <h3 class="font-bold text-neonPink mb-3">Прозрачность</h3>
-          <p class="text-zinc-300">Каждая заявка моментально падает Вам в Telegram с полной историей диалога.</p>
-        </article>
+  <!-- 3. БЛОК С ПРЕИМУЩЕСТВАМИ -->
+  <section class="py-24 gradient-bg relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Почему наша связка <span class="text-neonBlue">гарантированно работает?</span></h2>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="mt-1 w-6 h-6 rounded-full bg-neonBlue/20 flex items-center justify-center text-neonBlue font-bold">✓</div>
+              <div>
+                <h4 class="font-bold text-lg">Конверсия до 18%</h4>
+                <p class="text-zinc-500 text-sm">Наши лендинги спроектированы по UX-стандартам 2026 года под Ваш оффер.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="mt-1 w-6 h-6 rounded-full bg-neonBlue/20 flex items-center justify-center text-neonBlue font-bold">✓</div>
+              <div>
+                <h4 class="font-bold text-lg">Мгновенные уведомления</h4>
+                <p class="text-zinc-500 text-sm">Вы узнаете о лиде через 2 секунды после того, как он нажал кнопку «Заказать».</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="mt-1 w-6 h-6 rounded-full bg-neonBlue/20 flex items-center justify-center text-neonBlue font-bold">✓</div>
+              <div>
+                <h4 class="font-bold text-lg">Только целевой трафик</h4>
+                <p class="text-zinc-500 text-sm">Яндекс.Директ настраивается по Вашей базе конкурентов и горячим ключам.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/2 p-10 rounded-3xl bg-cyberBlue/10 neon-border relative">
+            <div class="absolute inset-0 bg-neonBlue/5 blur-3xl rounded-full"></div>
+            <img src="./assets/neon-2.png" alt="Dashboard Preview" class="relative z-10 w-full rounded-xl">
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-line my-10 md:my-12"></div>
-
-    <section class="reveal">
-      <h2 class="text-2xl md:text-4xl font-extrabold mb-6 neon-text text-center">3 шага до первой прибыли</h2>
-      <div class="grid md:grid-cols-3 gap-5">
-        <article class="card-glow rounded-2xl p-5">
-          <p class="text-xs uppercase tracking-widest text-neonBlue mb-2">Шаг 01</p>
-          <h3 class="font-bold mb-2">Сборка системы</h3>
-          <p class="text-zinc-300 text-sm">Создаем лендинг с высокой конверсией и упаковываем ваш оффер для ИИ.</p>
-        </article>
-        <article class="card-glow rounded-2xl p-5">
-          <p class="text-xs uppercase tracking-widest text-neonPink mb-2">Шаг 02</p>
-          <h3 class="font-bold mb-2">Запуск трафика</h3>
-          <p class="text-zinc-300 text-sm">Включаем рекламу в Яндексе на целевую аудиторию.</p>
-        </article>
-        <article class="card-glow rounded-2xl p-5">
-          <p class="text-xs uppercase tracking-widest text-neonBlue mb-2">Шаг 03</p>
-          <h3 class="font-bold mb-2">Авто-обработка</h3>
-          <p class="text-zinc-300 text-sm">ИИ начинает звонить, писать и дожимать лиды. Вам остается только принимать деньги.</p>
-        </article>
+  <!-- 4. КАК МЫ РАБОТАЕМ -->
+  <section class="py-24 bg-cyberBlack">
+    <div class="max-w-5xl mx-auto px-5 text-center">
+      <h2 class="text-3xl md:text-5xl font-black mb-16">Путь до первой заявки</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="reveal">
+          <div class="text-4xl font-black text-neonBlue mb-4">01</div>
+          <h4 class="font-bold mb-2">Бриф</h4>
+          <p class="text-zinc-500 text-sm">30 минут на разбор Вашего бизнеса и оффера.</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl font-black text-neonBlue mb-4">02</div>
+          <h4 class="font-bold mb-2">Сборка</h4>
+          <p class="text-zinc-500 text-sm">Создаем Сайт и настраиваем связку с Telegram.</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl font-black text-neonBlue mb-4">03</div>
+          <h4 class="font-bold mb-2">Запуск</h4>
+          <p class="text-zinc-500 text-sm">Включаем Яндекс.Директ и начинаем тесты аудиторий.</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl font-black text-neonBlue mb-4">04</div>
+          <h4 class="font-bold mb-2">Профит</h4>
+          <p class="text-zinc-500 text-sm">Принимаете лиды и закрываете сделки.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-line my-10 md:my-12"></div>
-
-    <section class="reveal">
-      <h2 class="text-2xl md:text-4xl font-extrabold mb-6 neon-text text-center">Те, кто уже перешел на автопилот</h2>
-      <div class="space-y-5">
-        <article class="card-glow rounded-2xl p-5">
-          <div class="flex flex-wrap justify-between gap-3 mb-3">
-            <h3 class="font-bold text-neonBlue">Кейс №1: Ниша «Ремонт квартир»</h3>
-            <span class="text-xs px-3 py-1 rounded-full bg-neonBlue/20 border border-neonBlue text-neonBlue font-bold">[ СТАТУС: ВЫПОЛНЕНО ]</span>
+  <!-- 5. КЕЙСЫ (СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО) -->
+  <section class="py-24 gradient-bg">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl md:text-5xl font-black mb-16 text-center">Результаты нащих клиентов</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Кейс 1 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+          <div class="flex justify-between mb-4">
+            <span class="text-neonBlue text-xs font-bold">Ниша: Оборудование</span>
+            <span class="text-zinc-500 text-xs">ROI 320%</span>
           </div>
-          <p class="text-zinc-300 text-sm mb-3"><strong>До:</strong> 2 менеджера, 30% пропущенных звонков, стоимость сделки 12 000 ₽.</p>
-          <p class="text-zinc-300 text-sm mb-3"><strong>После:</strong> ИИ-менеджер + автообзвон. 0 пропущенных. Стоимость сделки упала до 8 500 ₽, тогда как выручка выросла в 3 раза за 20 дней.</p>
-          <p class="text-neonPink text-sm italic">«Раньше я тратил утро на разбор заявок. Теперь я просто открываю Telegram и вижу список клиентов, которые уже согласны на замер».</p>
-        </article>
-
-        <article class="card-glow rounded-2xl p-5">
-          <div class="flex flex-wrap justify-between gap-3 mb-3">
-            <h3 class="font-bold text-neonBlue">Кейс №2: Ниша «Оптовые продажи (Стройматериалы)»</h3>
-            <span class="text-xs px-3 py-1 rounded-full bg-neonPink/20 border border-neonPink text-neonPink font-bold">[ ROI: +450% ]</span>
+          <h4 class="font-bold mb-4 text-lg">24 лида за первые 3 дня</h4>
+          <p class="text-zinc-500 text-sm mb-6 italic">«Раньше заявка стоила 1500р, после запуска связки упала до 420р. Все уведомления в телеге — это кайф».</p>
+          <p class="text-white font-bold text-xs">— Алексей, тех. директор</p>
+        </div>
+        <!-- Кейс 2 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+          <div class="flex justify-between mb-4">
+            <span class="text-neonBlue text-xs font-bold">Ниша: Услуги спецтехники</span>
+            <span class="text-zinc-500 text-xs">+15 звонков/сутки</span>
           </div>
-          <p class="text-zinc-300 text-sm"><strong>Задача:</strong> Реанимировать базу из 5 000 «спящих» контактов.</p>
-          <p class="text-zinc-300 text-sm"><strong>Было:</strong> 3 менеджера за 2 недели обрабатывали только 15% базы.</p>
-          <p class="text-zinc-300 text-sm"><strong>Решение:</strong> ИИ прозвонил всю базу за 4 часа, а ИИ-менеджер сразу отправил прайс в WhatsApp.</p>
-          <p class="text-zinc-100 text-sm"><strong>Результат:</strong> 420 подтвержденных заявок. Выручка <span class="font-black text-neonBlue">2.8 млн ₽ за сутки</span> без участия людей.</p>
-        </article>
-
-        <article class="card-glow rounded-2xl p-5">
-          <div class="flex flex-wrap justify-between gap-3 mb-3">
-            <h3 class="font-bold text-neonBlue">Кейс №3: Ниша «Онлайн-образование / Инфобизнес»</h3>
-            <span class="text-xs px-3 py-1 rounded-full bg-neonBlue/20 border border-neonBlue text-neonBlue font-bold">[ СТАТУС: ВЫПОЛНЕНО ]</span>
-          </div>
-          <p class="text-zinc-300 text-sm"><strong>Задача:</strong> Быстро подтвердить регистрацию на вебинар и дожать заявки на оплату.</p>
-          <p class="text-zinc-300 text-sm"><strong>Было:</strong> Конверсия 12%, дозвон занимал 40-60 минут.</p>
-          <p class="text-zinc-300 text-sm"><strong>Решение:</strong> ИИ звонит через 15 секунд, а при сбросе продолжает диалог в Telegram.</p>
-          <p class="text-zinc-100 text-sm"><strong>Результат:</strong> Обработка сокращена до <span class="font-black text-neonPink">15 секунд</span>, конверсия выросла до 34%, стоимость клиента снизилась в 2.5 раза.</p>
-        </article>
-
-        <article class="card-glow rounded-2xl p-5">
-          <div class="flex flex-wrap justify-between gap-3 mb-3">
-            <h3 class="font-bold text-neonBlue">Кейс №4: Ниша «Агентство недвижимости (Дубай/Москва)»</h3>
-            <span class="text-xs px-3 py-1 rounded-full bg-neonPink/20 border border-neonPink text-neonPink font-bold">[ ROI: +300% ]</span>
-          </div>
-          <p class="text-zinc-300 text-sm"><strong>Задача:</strong> Отфильтровать поток заявок и передавать брокерам только клиентов с бюджетом и готовностью к сделке.</p>
-          <p class="text-zinc-300 text-sm"><strong>Было:</strong> 70% времени уходило на «мусорные» лиды, горячие клиенты ждали по 2 часа.</p>
-          <p class="text-zinc-300 text-sm"><strong>Решение:</strong> ИИ-менеджер на лендинге уточняет бюджет, цель, локацию; автообзвон сразу соединяет с VIP-брокером.</p>
-          <p class="text-zinc-100 text-sm mb-3"><strong>Результат:</strong> Назначенные встречи +85%, первичная квалификация автоматизирована полностью.</p>
-          <span class="inline-block text-xs px-3 py-1 rounded-md bg-neonBlue/20 border border-neonBlue text-neonBlue font-semibold">ИИ не ошибается: средняя точность квалификации клиента нашей системой — 98.4%</span>
-        </article>
+          <h4 class="font-bold mb-4 text-lg">Окупаемость за неделю</h4>
+          <p class="text-zinc-500 text-sm mb-6 italic">«Сделали всё реально за сутки. На утро уже пошли первые звонки. Рекомендую технарям!».</p>
+          <p class="text-white font-bold text-xs">— Дмитрий В.</p>
+        </div>
+        <!-- Кейс 3 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+            <div class="flex justify-between mb-4">
+              <span class="text-neonBlue text-xs font-bold">Ниша: IT-аутсорс</span>
+              <span class="text-zinc-500 text-xs">Cost per Lead: 550р</span>
+            </div>
+            <h4 class="font-bold mb-4 text-lg">Система работает как часы</h4>
+            <p class="text-zinc-500 text-sm mb-6 italic">«Связка с Telegram заменила нам CRM на первом этапе. Очень удобно квалифицировать клиентов».</p>
+            <p class="text-white font-bold text-xs">— Максим, СЕО</p>
+        </div>
+        <!-- Кейс 4 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+            <div class="flex justify-between mb-4">
+              <span class="text-neonBlue text-xs font-bold">Ниша: Производство</span>
+              <span class="text-zinc-500 text-xs">+400к прибыли</span>
+            </div>
+            <h4 class="font-bold mb-4 text-lg">Вышли на новый регион</h4>
+            <p class="text-zinc-500 text-sm mb-6 italic">«Быстро протестировали спрос в МСК. Результат превзошел ожидания. Яндекс.Директ настроен идеально».</p>
+            <p class="text-white font-bold text-xs">— Игорь П.</p>
+        </div>
+        <!-- Кейс 5 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+            <div class="flex justify-between mb-4">
+              <span class="text-neonBlue text-xs font-bold">Ниша: Юр. услуги</span>
+              <span class="text-zinc-500 text-xs">CTR рекламы 8%</span>
+            </div>
+            <h4 class="font-bold mb-4 text-lg">Стабильный поток заявок</h4>
+            <p class="text-zinc-500 text-sm mb-6 italic">«Никакой воды. Сказали 24 часа — сделали за 24 часа. Лиды идут ровно, менеджер в восторге».</p>
+            <p class="text-white font-bold text-xs">— Елена, ст. партнер</p>
+        </div>
+        <!-- Кейс 6 -->
+        <div class="reveal p-6 rounded-2xl bg-cyberGray border border-white/5">
+            <div class="flex justify-between mb-4">
+              <span class="text-neonBlue text-xs font-bold">Ниша: Строительство</span>
+              <span class="text-zinc-500 text-xs">ROI 450%</span>
+            </div>
+            <h4 class="font-bold mb-4 text-lg">Масштабирование за 24ч</h4>
+            <p class="text-zinc-500 text-sm mb-6 italic">«Нужно было быстро запустить новое направление. Ребята справились на отлично. Трафик качественный».</p>
+            <p class="text-white font-bold text-xs">— Сергей, основатель</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-line my-10 md:my-12"></div>
+  <!-- 6. СТОИМОСТЬ -->
+  <section class="py-24 bg-cyberBlack relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-5">
+      <div class="card-glow rounded-3xl p-8 md:p-12 border-2 border-neonBlue shadow-neon text-center relative">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-neonPink text-white font-black rounded-full uppercase tracking-widest text-sm shadow-neonStrong">
+          Акция ограничена
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Стоимость системы <span class="text-neonBlue">«под ключ»</span></h2>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-10">
+          <div class="text-zinc-500 text-2xl md:text-3xl line-through decoration-neonPink">45.999 ₽</div>
+          <div class="text-5xl md:text-7xl font-black text-white neon-text-blue">15.999 ₽</div>
+        </div>
 
-    <section id="final-cta" class="reveal card-glow rounded-2xl p-8 md:p-10">
-      <h2 class="text-2xl md:text-4xl font-extrabold mb-4 neon-text leading-tight text-center">Готовы масштабироваться без найма новых сотрудников?</h2>
-      <p class="text-zinc-300 text-sm md:text-base mb-6">
-        Получите «Расчет эффективности ИИ-отдела продаж» конкретно под Вашу нишу.
-      </p>
-      <form class="grid md:grid-cols-3 gap-4 mb-6">
-        <input type="tel" placeholder="Ваш телефон" class="rounded-xl bg-black/40 border border-neonBlue/50 px-4 py-3 outline-none focus:ring-2 focus:ring-neonBlue">
-        <input type="text" placeholder="Ниша бизнеса" class="rounded-xl bg-black/40 border border-neonPink/50 px-4 py-3 outline-none focus:ring-2 focus:ring-neonPink">
-        <button type="button" class="neon-btn w-full rounded-xl bg-gradient-to-r from-neonPink to-neonBlue px-4 py-3 text-xs sm:text-sm font-black tracking-wide uppercase shadow-neon">ПОЛУЧИТЬ РАСЧЕТ</button>
-      </form>
-      <button type="button" class="neon-btn w-full md:w-auto text-center rounded-xl border border-neonBlue px-4 md:px-6 py-3 text-xs sm:text-sm leading-tight font-bold uppercase text-neonBlue hover:text-white hover:bg-neonBlue/20">
-        ПОЛУЧИТЬ ГАЙД "АВТОПИЛОТ ДЛЯ ЛЮБОЙ НИШИ В 2026 ГОДУ"
-      </button>
-    </section>
-  </main>
+        <div class="bg-white/5 rounded-2xl p-6 mb-10 border border-white/10">
+          <p class="text-xl md:text-2xl font-bold text-neonBlue mb-2">🎁 Бонус для старта:</p>
+          <p class="text-zinc-300">При заказе сегодня — <span class="text-white font-bold underline">5000 ₽ на баланс в Яндекс.Директ</span> в подарок!</p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4 text-sm text-zinc-400 mb-10">
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-neonBlue text-xl">✓</span>
+            <span>Сайт + Telegram новости</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-neonBlue text-xl">✓</span>
+            <span>Настройка Директа</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-neonBlue text-xl">✓</span>
+            <span>Техподдержка 24/7</span>
+          </div>
+        </div>
+
+        <a href="#form" class="inline-block px-12 py-5 bg-neonPink text-white font-black rounded-xl hover:scale-105 transition-transform shadow-neonStrong uppercase tracking-widest">
+          Забронировать цену
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ФИНАЛЬНАЯ ФОРМА -->
+  <section id="form" class="py-24 bg-cyberBlack relative">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <div class="p-12 rounded-3xl bg-cyberGray border-2 border-neonBlue shadow-neon relative overflow-hidden">
+        <h2 class="text-3xl md:text-5xl font-black mb-6">Готовы запустить систему?</h2>
+        <p class="text-zinc-400 mb-10">Оставьте заявку сейчас и получите <b class="text-neonBlue">быстрый старт для Вашего бизнеса</b>.</p>
+        
+        <form class="space-y-4 max-w-md mx-auto">
+          <input type="text" placeholder="Ваше имя" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors">
+          <input type="tel" placeholder="Ваш телефон / WhatsApp" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors text-white">
+          <button type="submit" class="w-full py-5 bg-neonPink text-white font-black rounded-xl hover:scale-105 transition-transform uppercase tracking-widest shadow-neonStrong">
+            Заказать систему
+          </button>
+        </form>
+        
+        <p class="text-zinc-600 text-[10px] mt-8 uppercase tracking-widest">Гарантируем 100% конфиденциальность Ваших данных</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 border-t border-white/5 text-center text-zinc-600">
+    <div class="max-w-5xl mx-auto px-5">
+      <p class="mb-4 text-xs tracking-[0.2em] uppercase font-bold">Сайт + Яндекс.Директ + Telegram за 24ч</p>
+      <p class="text-xs">&copy; 2026. Разработано техническим отделом Cyber AI. Все права защищены.</p>
+    </div>
+  </footer>
 
   <script>
     const reveals = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, { threshold: 0.15 });
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            }
+        });
+    }, { threshold: 0.1 });
     reveals.forEach((el) => observer.observe(el));
-
   </script>
 </body>
 </html>
