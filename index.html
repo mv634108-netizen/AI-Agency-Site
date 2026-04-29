@@ -315,30 +315,42 @@
     }, { threshold: 0.1 });
     reveals.forEach((el) => observer.observe(el));
 
-    // Обработка формы
+    // Обработка формы (Прямая отправка в Telegram без PHP)
     document.getElementById('leadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = e.target.querySelector('button');
-      const formData = new FormData(e.target);
+      const name = e.target.querySelector('[name="name"]').value;
+      const phone = e.target.querySelector('[name="phone"]').value;
       
+      const token = "8782399425:AAHN4zbUNSydDARqkm4L3lyJ3BgJfECN0kI";
+      const chatId = "8001698573";
+      
+      const message = `🚀 НОВАЯ ЗАЯВКА С САЙТА\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n💼 Услуга: Сайт + Директ + Telegram\n🌐 Источник: GitHub Pages`;
+
       btn.disabled = true;
       btn.innerText = 'ОТПРАВКА...';
 
       try {
-        const response = await fetch('send.php', {
+        const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
           method: 'POST',
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+          })
         });
+        
         const result = await response.json();
         
-        if (result.status === 'success') {
+        if (result.ok) {
           alert('Спасибо! Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.');
           e.target.reset();
         } else {
-          alert('Ошибка: ' + result.message);
+          alert('Ошибка Telegram API: ' + result.description);
         }
       } catch (error) {
-        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+        alert('Ошибка сети. Проверьте подключение к интернету.');
       } finally {
         btn.disabled = false;
         btn.innerText = 'Заказать систему';
