@@ -284,9 +284,9 @@
         <h2 class="text-3xl md:text-5xl font-black mb-6">Готовы запустить систему?</h2>
         <p class="text-zinc-400 mb-10">Оставьте заявку сейчас и получите <b class="text-neonBlue">быстрый старт для Вашего бизнеса</b>.</p>
         
-        <form class="space-y-4 max-w-md mx-auto">
-          <input type="text" placeholder="Ваше имя" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors">
-          <input type="tel" placeholder="Ваш телефон / WhatsApp" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors text-white">
+        <form id="leadForm" class="space-y-4 max-w-md mx-auto">
+          <input type="text" name="name" required placeholder="Ваше имя" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors text-white">
+          <input type="tel" name="phone" required placeholder="Ваш телефон / WhatsApp" class="w-full px-6 py-4 bg-black/50 border border-white/10 rounded-xl outline-none focus:border-neonBlue transition-colors text-white">
           <button type="submit" class="w-full py-5 bg-neonPink text-white font-black rounded-xl hover:scale-105 transition-transform uppercase tracking-widest shadow-neonStrong">
             Заказать систему
           </button>
@@ -314,6 +314,36 @@
         });
     }, { threshold: 0.1 });
     reveals.forEach((el) => observer.observe(el));
+
+    // Обработка формы
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const formData = new FormData(e.target);
+      
+      btn.disabled = true;
+      btn.innerText = 'ОТПРАВКА...';
+
+      try {
+        const response = await fetch('send.php', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+          alert('Спасибо! Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.');
+          e.target.reset();
+        } else {
+          alert('Ошибка: ' + result.message);
+        }
+      } catch (error) {
+        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'Заказать систему';
+      }
+    });
   </script>
 </body>
 </html>
